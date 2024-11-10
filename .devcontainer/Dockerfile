@@ -27,6 +27,7 @@ USER root
 COPY .devcontainer/environment.yml .devcontainer/noop.txt /tmp/conda-tmp/
 RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bin/mamba env update -n base -f /tmp/conda-tmp/environment.yml; fi \
     && rm -rf /tmp/conda-tmp
+# assumes environment.yml file exists in workspace root, if not this will fail
 COPY environment.yml .devcontainer/noop.txt /tmp/conda-tmp/
 RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bin/mamba create --name project --clone base && /opt/conda/bin/mamba env update -n project -f /tmp/conda-tmp/environment.yml; fi \
     && rm -rf /tmp/conda-tmp
