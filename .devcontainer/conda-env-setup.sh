@@ -30,13 +30,13 @@ eval "$(conda shell.bash hook)"
 #mamba install -n altair -y altair vega_datasets altair_viewer jupyterlab jupyter
 
 # install requirements for the project and install in that env
-echo $DEVCONTAINER_WORKSPACE_PATH
-if [[ -f $DEVCONTAINER_WORKSPACE_PATH/environment.yml ]]; then
-    echo "installing project requirements in new conda environment"
-    mamba env create -f $DEVCONTAINER_WORKSPACE_PATH/environment.yml
-else
-    echo "no environment.yml file found in $DEVCONTAINER_WORKSPACE_PATH"
-fi
+# echo $DEVCONTAINER_WORKSPACE_PATH
+# if [[ -f $DEVCONTAINER_WORKSPACE_PATH/environment.yml ]]; then
+#     echo "installing project requirements in new conda environment"
+#     mamba env create -f $DEVCONTAINER_WORKSPACE_PATH/environment.yml
+# else
+#     echo "no environment.yml file found in $DEVCONTAINER_WORKSPACE_PATH"
+# fi
 
 # define alternate environment and install packages, if needed
 alt_env="chatgpt"
