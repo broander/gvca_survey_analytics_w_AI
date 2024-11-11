@@ -39,5 +39,5 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends git screenfetch bash-completion \
     xsel xclip fonts-powerline tmux build-essential cmake gdb vim-nox npm jq shellcheck \
     python3-dev autotools-dev autoconf automake pkg-config python3-docutils \
-    libseccomp-dev libjansson-dev libyaml-dev libxml2-dev fish figlet global \
+    libseccomp-dev libjansson-dev libyaml-dev libxml2-dev fish figlet global postgresql \
     && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
