@@ -167,23 +167,20 @@ sudo npm install -g vim-language-server
 # install YTOP system performance tool; requires rust
 # install rust first
 curl https://sh.rustup.rs -sSf | sh -s -- -y
-source "$HOME/.cargo/env"
+#source "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
 # not being maintained, trying alternative below
 # ./.cargo/bin/cargo install ytop
 # install btm
 rustup update stable
 # install with rust
-# cargo install bottom --locked
-## install deb package, less to download
-# curl -LO https://github.com/ClementTsang/bottom/archive/0.10.2.tar.gz
-# sudo dpkg -i bottom_0.8.0_amd64.deb
-# rm bottom_0.8.0_amd64.deb
+cargo install bottom --locked
 # install archived package, less to download
-curl -LO https://github.com/ClementTsang/bottom/archive/0.10.2.tar.gz
-tar -xzvf 0.10.2.tar.gz
-cargo install --path . --locked
-rm -r bottom-0.10.2
-rm 0.10.2.tar.gz
+# curl -LO https://github.com/ClementTsang/bottom/archive/0.10.2.tar.gz
+# tar -xzvf 0.10.2.tar.gz
+# cargo install --path . --locked
+# rm -r bottom-0.10.2
+# rm 0.10.2.tar.gz
 
 # Install Universal Ctags
 mkdir -p ~/Github/BuildClones
